@@ -1,0 +1,71 @@
+﻿@charset "utf-8";
+// 常用变量
+//----------------------------------------
+$baseSize: 1242px !default;
+
+// px to rem, 基于 1242的设计稿
+//----------------------------------------
+@function px2rem($px) {
+	@return $px * 10 / $baseSize * 1rem;
+}
+
+// flex
+// 1.老版语法
+// 2.混合语法
+// 3.新版语法
+//----------------------------------------
+@mixin flex {
+	display: -webkit-box; // 1
+	display: box; // 1
+	display: -webkit-flexbox; // 2
+	display: -webkit-flex;  // 3
+}
+
+// flexbox 垂直居中
+// 1.老版语法
+// 2.混合语法
+// 3.新版语法
+//----------------------------------------
+@mixin flex-align-center {
+	-webkit-box-align: center; // 1
+	box-align: center; // 1
+	-webkit-flex-align: center; // 2
+	-webkit-align-items: center; // 3
+}
+
+// flexbox 水平居中
+// 1.老版语法
+// 2.混合语法
+// 3.新版语法
+//----------------------------------------
+@mixin flex-justify-center {
+	-webkit-box-pack: center; // 1	
+	box-pack: center; // 1	
+	-webkit-flex-pack: center; // 2
+	-webkit-justify-content: center; // 3
+}
+
+// flexbox 两端对齐
+// 1.老版语法
+// 2.新版语法
+//----------------------------------------
+@mixin flex-justify-between {
+	-webkit-box-pack: justify; // 1
+	box-pack: justify; // 1
+    -webkit-justify-content: space-between; // 2
+}
+
+// flexbox 布局方向
+// 1.老版语法
+// 2.新版语法
+//----------------------------------------
+@mixin flex-dir-row {
+	-webkit-box-orient: horizontal; // 1
+	box-orient: horizontal; // 1
+	-webkit-flex-direction: row; // 2
+}
+@mixin flex-dir-col {
+	-webkit-box-orient: vertical; // 1
+	box-orient: vertical; // 1
+	-webkit-flex-direction: column; // 2
+}
